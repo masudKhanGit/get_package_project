@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'package:get/get.dart';
+
+import 'app/routes/app_pages.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
-    );
-  }
+      title: "Application",
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+    ),
+  );
 }
